@@ -6,7 +6,7 @@ import (
 
 	"github.com/go-logr/logr"
 
-	"github.com/omaskery/outboxen/pkg/outbox"
+	"github.com/plunkettscott/outboxen/pkg/outbox"
 )
 
 type PublishedMessage struct {

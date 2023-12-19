@@ -7,8 +7,8 @@ import (
 	. "github.com/onsi/ginkgo/extensions/table"
 	. "github.com/onsi/gomega"
 
-	"github.com/omaskery/outboxen/pkg/fake"
-	"github.com/omaskery/outboxen/pkg/outbox"
+	"github.com/plunkettscott/outboxen/pkg/fake"
+	"github.com/plunkettscott/outboxen/pkg/outbox"
 )
 
 var _ = Describe("Config", func() {
@@ -37,7 +37,7 @@ var _ = Describe("Config", func() {
 		Expect(cfg.DefaultAndValidate()).To(Succeed())
 
 		Expect(cfg.Clock).To(Equal(clockwork.NewRealClock()))
-		Expect(cfg.Logger).To(Equal(&logr.DiscardLogger{}))
+		Expect(cfg.Logger).To(Equal(logr.Discard()))
 		Expect(cfg.BatchSize).To(Equal(outbox.DefaultBatchSize))
 		Expect(cfg.ClaimDuration).To(Equal(outbox.DefaultClaimDuration))
 		Expect(cfg.ProcessInterval).To(Equal(outbox.DefaultProcessInterval))

@@ -55,8 +55,8 @@ func (c *Config) DefaultAndValidate() error {
 		c.Clock = clockwork.NewRealClock()
 	}
 
-	if c.Logger == nil {
-		c.Logger = &logr.DiscardLogger{}
+	if c.Logger.IsZero() {
+		c.Logger = logr.Discard()
 	}
 
 	if c.ProcessInterval == 0 {
